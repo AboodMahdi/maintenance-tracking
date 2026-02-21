@@ -9,9 +9,12 @@ import {
 
 // 🔥 ضع نفس بيانات firebase من تطبيقك
 const firebaseConfig = {
-  apiKey: "PUT_API_KEY_HERE",
-  authDomain: "PUT_AUTH_DOMAIN_HERE",
-  projectId: "PUT_PROJECT_ID_HERE",
+  apiKey: "AIzaSyDYjzRZROER7nPX38uuIT8n76W4P36dvVg",
+  authDomain: "maintenance-system-b72f9.firebaseapp.com",
+  projectId: "maintenance-system-b72f9",
+  storageBucket: "maintenance-system-b72f9.firebasestorage.app",
+  messagingSenderId: "1063919452245",
+  appId: "1:1063919452245:web:1fc13bd894e652a50254dc"
 };
 
 const app = initializeApp(firebaseConfig);
