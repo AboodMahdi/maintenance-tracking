@@ -7,6 +7,30 @@ import {
   getDocs
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+
+fetch("data.json")
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById("cards");
+
+    data.users.forEach(user => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <h2>${user.name}</h2>
+        <p><strong>البريد:</strong> ${user.email}</p>
+        <p><strong>المدينة:</strong> ${user.city}</p>
+        <p><strong>الحالة:</strong> ${user.status}</p>
+      `;
+
+      container.appendChild(card);
+    });
+  })
+  .catch(error => {
+    console.error("خطأ في تحميل البيانات:", error);
+  });
+//////
 // 🔥 ضع نفس بيانات firebase من تطبيقك
 const firebaseConfig = {
   apiKey: "AIzaSyDYjzRZROER7nPX38uuIT8n76W4P36dvVg",
