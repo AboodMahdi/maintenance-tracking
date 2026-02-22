@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html>
 <head>
   <meta charset="UTF-8" />
-  <title>تتبع طلب الصيانة</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Tracking Page</title>
+  <script type="module" src="./app.js"></script>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 40px;
+      background: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>🔎 تتبع طلب الصيانة</h1>
-
-    <div class="search-box">
-      <input type="text" id="orderId" placeholder="أدخل رقم الطلب..." />
-      <button onclick="trackOrder()">بحث</button>
-    </div>
-
-    <div id="result" class="result hidden"></div>
-  </div>
-
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+  <h1>Tracking Data</h1>
+  <div id="tracking-list"></div>
 
 </body>
 </html>
