@@ -1,39 +1,35 @@
-{
-  "users": [
-    {
-      "id": 1,
-      "name": "أحمد محمد",
-      "email": "ahmed@example.com",
-      "city": "الرياض",
-      "status": "نشط"
-    },
-    {
-      "id": 2,
-      "name": "سارة علي",
-      "email": "sara@example.com",
-      "city": "جدة",
-      "status": "نشط"
-    },
-    {
-      "id": 3,
-      "name": "خالد عبدالله",
-      "email": "khaled@example.com",
-      "city": "الدمام",
-      "status": "غير نشط"
-    },
-    {
-      "id": 4,
-      "name": "نورة سعد",
-      "email": "noura@example.com",
-      "city": "مكة",
-      "status": "نشط"
-    },
-    {
-      "id": 5,
-      "name": "عبدالله يوسف",
-      "email": "abdullah@example.com",
-      "city": "المدينة",
-      "status": "معلق"
-    }
-  ]
-}
+const orders = [
+  {
+    id: "1001",
+    customer: "محمد أحمد",
+    device: "iPhone 13",
+    issue: "الشاشة لا تعمل",
+    status: "open",
+    history: [
+      "تم استلام الجهاز",
+    ]
+  },
+  {
+    id: "1002",
+    customer: "سارة علي",
+    device: "Laptop Dell",
+    issue: "مشكلة في البطارية",
+    status: "in_progress",
+    history: [
+      "تم استلام الجهاز",
+      "جاري فحص الجهاز"
+    ]
+  },
+  {
+    id: "1003",
+    customer: "خالد سالم",
+    device: "Printer HP",
+    issue: "لا يطبع",
+    status: "done",
+    history: [
+      "تم استلام الجهاز",
+      "تم الإصلاح",
+      "تم تسليم الجهاز"
+    ]
+  }
+];
