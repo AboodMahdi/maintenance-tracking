@@ -1,28 +1,46 @@
 import { db } from "./firebase.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-async function loadTracking() {
+async function loadRepairs() {
   const container = document.getElementById("tracking-list");
   container.innerHTML = "Loading...";
 
-  const querySnapshot = await getDocs(collection(db, "tracking"));
+  try {
+    // ✅ القراءة من repairs
+    const querySnapshot = await getDocs(collection(db, "repairs"));
 
-  container.innerHTML = "";
+    console.log("Documents found:", querySnapshot.size);
 
-  querySnapshot.forEach((doc) => {
-    const data = doc.data();
+    if (querySnapshot.empty) {
+      container.innerHTML = "❌ لا توجد بيانات داخل collection repairs";
+      return;
+    }
 
-    const card = document.createElement("div");
-    card.className = "card";
+    container.innerHTML = `<h3>عدد السجلات: ${querySnapshot.size}</h3>`;
 
-    card.innerHTML = `
-      <strong>ID:</strong> ${doc.id} <br/>
-      <strong>Name:</strong> ${data.name || "N/A"} <br/>
-      <strong>Status:</strong> ${data.status || "N/A"}
-    `;
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
 
-    container.appendChild(card);
-  });
+      const card = document.createElement("div");
+      card.className = "card";
+
+      let fieldsHTML = "";
+      for (const key in data) {
+        fieldsHTML += `<strong>${key}:</strong> ${data[key]} <br/>`;
+      }
+
+      card.innerHTML = `
+        <strong>Document ID:</strong> ${doc.id} <br/><br/>
+        ${fieldsHTML}
+      `;
+
+      container.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error("Firestore error:", error);
+    container.innerHTML = "❌ حصل خطأ — افتح Console";
+  }
 }
 
-loadTracking();
+loadRepairs();
