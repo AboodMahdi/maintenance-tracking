@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "أحمد محمد",
+      "email": "ahmed@example.com",
+      "city": "الرياض",
+      "status": "نشط"
+    },
+    {
+      "id": 2,
+      "name": "سارة علي",
+      "email": "sara@example.com",
+      "city": "جدة",
+      "status": "نشط"
+    },
+    {
+      "id": 3,
+      "name": "خالد عبدالله",
+      "email": "khaled@example.com",
+      "city": "الدمام",
+      "status": "غير نشط"
+    },
+    {
+      "id": 4,
+      "name": "نورة سعد",
+      "email": "noura@example.com",
+      "city": "مكة",
+      "status": "نشط"
+    },
+    {
+      "id": 5,
+      "name": "عبدالله يوسف",
+      "email": "abdullah@example.com",
+      "city": "المدينة",
+      "status": "معلق"
+    }
+  ]
+}
